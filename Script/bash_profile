@@ -1,0 +1,64 @@
+#gnome style
+#PS1="\a\n\n\e[32;1m\u@\h [\d at \@]\n\e[33;1m\w\e[0m\n$ "
+PS1="\a\n\n\e[32;1m\u@\h \e[33;1m\w\e[0m\n$ "
+
+export PATH=~/myBin:$PATH
+
+export LC_ALL=en_US.UTF-8
+#export LC_ALL=ko_KR.UTF-8
+#export LC_ALL=C
+
+#svn control
+alias svnignore="sudo svn up --ignore-externals"
+
+#bash_profile update
+alias bashupdate="source ~/.bash_profile"
+
+alias h="history "
+alias ls="ls -vFG "
+alias ll="ls -alt "
+alias du="du -h -d 1 "
+
+#rvictl control
+alias rviset="rvictl -s"
+alias rviremove="rvictl -x"
+alias rvilist="rvictl -l"
+alias rviset_gs="rvictl -s 89b5f72a0e7018cbf86f4dd0c92f4c8439fed76a"
+alias rviremove_gs="rvictl -x 89b5f72a0e7018cbf86f4dd0c92f4c8439fed76a"
+
+#ssh Connection
+#alias godk="ssh -2 -p 5960 root@dk.snackb2b.com"
+
+alias ff="find . -iname "
+#alias ff="find . | grep "
+alias grep="grep --color=auto --exclude-dir=\".svn\" --exclude="*~" --exclude=tags "
+
+mygrep()
+{
+        if [ -n "$2" ]; then
+                grep -nr -i $1 $2
+        else
+                grep -nr -i $1 *
+        fi
+}
+#alias gr=mygrep
+#alias gr='grep --colour=yes --exclude="*/\.svn/*" --exclude="*~" --exclude=tags -nr'
+
+
+alias deltmp="find . -name \"*~\" | xargs rm "
+
+#work dir
+alias gobr="cd /Users/shinhyejung/Desktop/project/SPC_MOBILE_iOS_BRK/"
+
+#recursive sed
+#find -type f -exec sed -i 's/osip_/wtsip_/g' {} +
+
+#svn
+export SVN_EDITOR=vim
+alias svst="svn st --no-ignore"
+#alias svstm="svn st --no-ignore | grep ^M"
+
+alias svdiff="svn diff > diff.txt; vi diff.txt"
+
+#svn add script
+#alias svad="svn st | grep "^?" | awk '\''{print $2}'\'' | xargs svn add"
